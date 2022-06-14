@@ -54,7 +54,22 @@ fetch('https://jsonplaceholder.typicode.com/posts/1')
   )
 
   cw3.addEventListener("click", function () {
-    //TODO implement it
-  })
+   answer.innerHTML="<h1>Processing...</h1>";
+fetch('https://jsonplaceholder.typicode.com/posts', {
+  method: 'POST',
+  body: JSON.stringify({
+    title: 'cats',
+    body: 'CATSCATSCATSCATSCATSCATSCATSCATSCATSCATSCATSCATSCATSCATSCATSCATSCATSCATSCATSCATS',
+    userId: 420,
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+})
+  .then((response) => response.json())
+  .then((json) => console.log(json));
+        
+ 
+})
 
 })();
