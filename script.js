@@ -35,8 +35,23 @@ fetch('https://jsonplaceholder.typicode.com/posts')
   })
 
   cw2.addEventListener("click", function () {
-    //TODO implement it
+    answer.innerHTML="<h1>Loading...</h1>";
+fetch('https://jsonplaceholder.typicode.com/posts/1')
+.then(response => response.json())
+  .then(function(dane) {
+    NowaLinia(dane)
   })
+ function NowaLinia(dane){
+  answer.innerHTML="";
+     var div = document.createElement("div");
+    div.innerHTML='User Id: '+dane.userId+'<br>'+'id: '+dane.id+'<br>'+
+   'title: '+dane.title+'<br>'+
+   'body: '+dane.body+'<br>';
+  answer.appendChild(div);
+        
+  }
+  }
+  )
 
   cw3.addEventListener("click", function () {
     //TODO implement it
